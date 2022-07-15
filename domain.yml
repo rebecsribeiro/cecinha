@@ -1,0 +1,97 @@
+version: "3.1"
+
+intents:
+  - cumprimento
+  - pedido_ajuda
+  - serviço
+  - chamado
+  - internet
+  - tecnico
+  - suporte
+  - elogio
+  - critica
+  - quebra
+  - repetir
+  - despedida
+
+entities:
+  - nome
+  - setor
+  - chamado
+
+slots:
+  slot_nome:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_nome
+      - entity: entity_nome
+  
+  setor:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_setor
+      - entity: entity_setor
+
+
+responses:
+  utter_apresentação:
+  - text: "Olá, jovem! Meu nome é Ceci, sou sua nova melhor amiga aqui na SEFIN, como posso lhe chamar?"
+  
+  - text: "Diga lá, jovem! Meu nome é Ceci, sou sua nova melhor amiga aqui na SEFIN, qual a sua graça?"
+  
+  utter_cumprimentar:
+  - text:  " Tudo bem, ()? Como posso lhe ajudar?"
+
+  utter_reunião:
+  - text: "Essa é a reunião disponível para o seu setor:  "
+    image: "mc.png"
+
+  utter_chamado:
+  - text: "(), para essa demanda será necessário a abertura de um chamado."
+  
+  utter_senha:
+  - text: "Este é o link para sua troca de senha:   https://www10.sefin.fortaleza.ce.gov.br/"
+
+  utter_restart: #resposta do /restart#
+  - text: "Acho que não pude lhe ajudar. Tentamos na próxima!"
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+
+
+
+
+#intents:
+#  - greet
+#  - goodbye
+#  - affirm
+#  - deny
+#  - mood_great
+#  - mood_unhappy
+#  - bot_challenge
+
+#responses:
+#  utter_greet:
+#  - text: "Hey! How are you?"
+#
+#  utter_cheer_up:
+#  - text: "Here is something to cheer you up:"
+#    image: "https://i.imgur.com/nGF1K8f.jpg"
+#
+#  utter_did_that_help:
+#  - text: "Did that help you?"
+#
+#  utter_happy:
+#  - text: "Great, carry on!"
+#
+#  utter_goodbye:
+#  - text: "Bye"
+#
+#  utter_iamabot:
+#  - text: "I am a bot, powered by Rasa."
+

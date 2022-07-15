@@ -1,0 +1,41 @@
+version: "3.1"
+
+nlu:
+- intent: cumprimento
+  examples: |
+    - Oi
+    - Olá
+    - Oizinho
+    - oi
+    - a
+    - teste
+  
+
+- intent: ajuda
+  examples: |
+    - Meu computador desligou
+    - Meu wi-fi não funciona
+    - minha rede não conecta
+    - Minha senha expirou
+    -
+
+- intent: chamado
+  examples: |
+    - Gostaria de abrir um chamado
+    - Preciso de um técnico
+
+- intent: senha
+  examples: |
+    - Gostaria de trocar de senha
+    - Preciso mudar de senha
+
+- intent: identifica_nome
+  examples: |
+    - (Teresa) [nome]
+    - Meu nome é (Allana) [nome]
+    - Pode me chamar de (Jorge) [nome]
+    - Me identifico como (Alberto) [nome]
+    - Prefiro que me chame de (Giovanildo) [nome]
+    - apenas (rebeca) [nome]
+    - é (suelen) [nome]
+    - sou o (igor) [nome]

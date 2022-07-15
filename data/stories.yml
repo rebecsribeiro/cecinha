@@ -1,0 +1,23 @@
+version: "3.1"
+
+stories:
+
+- story: bad
+  steps:
+  - intent: cumprimenta
+  - action: utter_apresentação
+  - intent: identifica_nome
+  - action: utter_cumprimentar
+  - intent: chamado
+  - action: ActionEncaminharAberturaChamado()
+
+- story: troca de senha
+  steps:
+  - intent: cumprimenta
+  - action: utter_apresentação
+  - intent: identifica_nome
+  - action: utter_cumprimentar
+  - intent: senha
+  - action: utter_senha
+
+
